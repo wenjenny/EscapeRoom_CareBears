@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {box-sizing: border-box}
+        body {font-family: Verdana, sans-serif; margin:0; height:100%}
+        .mySlides {display: none}
+        img {object-fit:cover;}
+        rect {fill:rgb(255,0,255);stroke-width:3;stroke:rgb(255,255,255);opacity:1.0}
+
+        .img {
+            background: no-repeat fixed 50%;
+            background-size: cover;
+            background-color: #ff9933;
+        }
+
+        .content {
+            min-height: 100vh;
+        }
+
+        .bears {
+            width: 15vw;
+            position: absolute;
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="img">
+        <div class="content"></div>
+        <div class="text" style="top:10px;"><a href="walls.html">Nevermind, go back</a></div>
+        <img src="jailed_bears/best_friend_bear.jpg" class="bears" style="left:12.5%; top:10%;"></img>
+        <img src="jailed_bears/cozy_heart_penguin.jpg" class="bears" style="left:32.5%; top:10%;"></img>
+        <img src="jailed_bears/funshine_bear.jpg" class="bears" style="left:52.5%; top:10%;"></img>
+        <img src="jailed_bears/gentle_heart_lamb.jpg" class="bears" style="left:72.5%; top:10%;"></img>
+        <img src="jailed_bears/grumpy_bear.jpg" class="bears" style="left:12.5%; top:50%;"></img>
+        <img src="jailed_bears/heartsong_bear.jpg" class="bears" style="left:32.5%; top:50%;"></img>
+        <img src="jailed_bears/hopeful_heart_bear.jpg" class="bears" style="left:52.5%; top:50%;"></img>
+        <img src="jailed_bears/true_heart_bear.jpg" class="bears" style="left:72.5%; top:50%;"></img>
+        <form id="form" onsubmit="return false;">
+            <input style="position:absolute; top:42%; left:15%; width:10%;" type="text" id="bestfriend"/>
+            <input style="position:absolute; top:42%; left:35%; width:10%;" type="text" id="cozyheart"/>
+            <input style="position:absolute; top:42%; left:55%; width:10%;" type="text" id="funshine"/>
+            <input style="position:absolute; top:42%; left:75%; width:10%;" type="text" id="goat"/>
+            <input style="position:absolute; top:82%; left:15%; width:10%;" type="text" id="grumpy"/>
+            <input style="position:absolute; top:82%; left:35%; width:10%;" type="text" id="heartsong"/>
+            <input style="position:absolute; top:82%; left:55%; width:10%;" type="text" id="hopefulheart"/>
+            <input style="position:absolute; top:82%; left:75%; width:10%;" type="text" id="trueheart"/>
+            <input style="position:absolute; top:90%; left:40%; width:20%;" type="submit" onclick="check();" />
+        </form>
+        <div class="text"><a id="next" style="text-decoration:none; color:#ff9933; font-size:15px;cursor:default;">Moving on...</a></div>
+    </div>
+
+    <script>
+        function check() {
+            var bestfriend = document.getElementById("bestfriend").value;
+            var cozyheart = document.getElementById("cozyheart").value;
+            var funshine = document.getElementById("funshine").value;
+            var goat = document.getElementById("goat").value;
+            var grumpy = document.getElementById("grumpy").value;
+            var heartsong = document.getElementById("heartsong").value;
+            var hopefulheart = document.getElementById("hopefulheart").value;
+            var trueheart = document.getElementById("trueheart").value;
+
+            var error = ""
+            if (bestfriend != "1") {
+                error += "Best Friend Bear";
+            }
+            if (cozyheart != "2") {
+                if (error != "") { error += ", "; }
+                error += "Cozy Heart Penguin";
+            }
+            if (funshine != "3") {
+                if (error != "") { error += ", "; }
+                error += "Funshine Bear";
+            }
+            if (goat != "4") {
+                if (error != "") { error += ", "; }
+                error += "Gentle Heart... Lamb";
+            }
+            if (grumpy != "5") {
+                if (error != "") { error += ", "; }
+                error += "Grumpy Bear";
+            }
+            if (heartsong != "6") {
+                if (error != "") { error += ", "; }
+                error += "Heartsong Bear";
+            }
+            if (hopefulheart != "7") {
+                if (error != "") { error += ", "; }
+                error += "Hopeful Heart Bear";
+            }
+            if (trueheart != "8") {
+                if (error != "") { error += ", "; }
+                error += "True Heart Bear";
+            }
+
+            if (error != "") {
+                error += " couldn't be rescued!";
+                alert(error);
+            } else {
+                alert("Moving on...")
+                document.getElementById("next").href = "sike.html"
+            }
+
+        }
+    </script>
+
+</body>
+</html>

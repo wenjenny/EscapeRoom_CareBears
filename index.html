@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {box-sizing: border-box}
+        body {font-family: Verdana, sans-serif; margin:0; height:100%}
+        img {object-fit:cover;}
+        rect {fill:rgb(255,0,255);stroke-width:3;stroke:rgb(255,255,255);opacity:0.0}
+
+        .img {
+            background: url("tv_room/tv_static.jpg") no-repeat fixed 50%;
+            background-size: cover;
+        }
+
+        .content {
+            min-height: 100vh;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 5%; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+        }
+
+        .modal-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            height: 70vh;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .channel-input {
+            position: absolute;
+            display: block;
+            top: 23%;
+            left: 42%
+        }
+
+    </style>
+</head>
+<body>
+    <div class="img">
+        <div class="content"></div>
+        <div id="myModal1" class="modal" style="display:block">
+            <div class="modal-content">
+                <p>story etc. etc.</p>
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 32%; right: 34%">
+            <a onclick="remote()">
+                <svg width="3vw" height="5vh"><rect width="100%" height="100%"/></svg>
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div class="container" id="remote">
+                            <img src="tv_room/remote_front.jpg" class="modal-image"></img>
+                            <div class="channel-input"><svg width="6vw" height="4vh"><rect width="100%" height="100%" onclick="channel()"></svg></div>
+                        </div>
+                        <p style="text-align:center; margin:0px;"><button onclick="toggle()">Flip</button></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div style="position: absolute; top: 20%; right: 12%">
+            <a id="door" style="cursor:default">
+                <svg width="15vw" height="55vh"><rect width="100%" height="100%"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <script>
+
+        var modal = document.getElementById("myModal");
+        var modal1 = document.getElementById("myModal1");
+        function remote() {
+            modal.style.display = "block";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal || event.target == modal1) {
+                modal.style.display = "none";
+                modal1.style.display = "none";
+            }
+        }
+
+        var front_active=True;
+        function toggle() {
+            front_active = !front_active;
+            if (front_active){
+                document.getElementById("remote").innerHTML =
+                    '<img src="tv_room/remote_front.jpg" class="modal-image"></img>' +
+                    '<div class="channel-input"><svg width="6vw" height="4vh"><rect width="100%" height="100%" onclick="channel()"></svg></div>'
+            } else {
+                document.getElementById("remote").innerHTML = '<img src="tv_room/remote_back.jpg" class="modal-image" onclick="toggle()">';
+            }
+        }
+
+        function channel() {
+            var pass = prompt("Input:")
+            if (pass == "821") {
+                document.getElementsByClassName("img")[0].style.backgroundImage = 'url("tv_room/tv_on.jpg")';
+                document.getElementById("door").href = "walls.html";
+            } else if (pass !== null && pass.trim() != "") {
+                alert("incorrect, try again")
+            }
+        }
+
+    </script>
+
+</body>
+</html>
