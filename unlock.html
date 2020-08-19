@@ -40,7 +40,7 @@
 <body>
     <div class="img">
         <div class="content"></div>
-        <div class="text" style="top:10px;"><a href="walls.html">Nevermind, go back</a></div>
+        <div class="text" style="top:10px;"><a href="walls.html">Just kidding, go back</a></div>
         <img src="jailed_bears/best_friend_bear.jpg" class="bears" style="left:12.5%; top:10%;"></img>
         <img src="jailed_bears/cozy_heart_penguin.jpg" class="bears" style="left:32.5%; top:10%;"></img>
         <img src="jailed_bears/funshine_bear.jpg" class="bears" style="left:52.5%; top:10%;"></img>
@@ -60,7 +60,7 @@
             <input style="position:absolute; top:82%; left:75%; width:10%;" type="text" id="trueheart"/>
             <input style="position:absolute; top:90%; left:40%; width:20%;" type="submit" onclick="check();" />
         </form>
-        <div class="text"><a id="next" style="text-decoration:none; color:#ff9933; font-size:15px;cursor:default;">Moving on...</a></div>
+        <div class="text"><a id="next" style="text-decoration:none; color:#ff9933; font-size:15px;cursor:default;">how to escape?</a></div>
     </div>
 
     <script>
@@ -74,45 +74,61 @@
             var hopefulheart = document.getElementById("hopefulheart").value;
             var trueheart = document.getElementById("trueheart").value;
 
-            var error = ""
-            if (bestfriend != "1") {
+            var error = "";
+            var count = 0;
+            if (bestfriend != "buffet") {
                 error += "Best Friend Bear";
+                count++;
             }
-            if (cozyheart != "2") {
+            if (cozyheart != "SLIDING") {
                 if (error != "") { error += ", "; }
                 error += "Cozy Heart Penguin";
+                count++;
             }
-            if (funshine != "3") {
+            if (funshine != "paper") {
                 if (error != "") { error += ", "; }
                 error += "Funshine Bear";
+                count++;
             }
-            if (goat != "4") {
+            if (goat != "SPAIN") {
                 if (error != "") { error += ", "; }
                 error += "Gentle Heart... Lamb";
+                count++;
             }
-            if (grumpy != "5") {
+            if (grumpy != "12:31") {
                 if (error != "") { error += ", "; }
                 error += "Grumpy Bear";
+                count++;
             }
-            if (heartsong != "6") {
+            if (heartsong != "bop bop bop") {
                 if (error != "") { error += ", "; }
                 error += "Heartsong Bear";
+                count++;
             }
-            if (hopefulheart != "7") {
+            if (hopefulheart != "40" || hopefulheart != "forty") {
                 if (error != "") { error += ", "; }
                 error += "Hopeful Heart Bear";
+                count++;
             }
-            if (trueheart != "8") {
+            if (trueheart != "CDFAEGB") {
                 if (error != "") { error += ", "; }
                 error += "True Heart Bear";
+                count++;
             }
 
             if (error != "") {
-                error += " couldn't be rescued!";
+                var pos = error.lastIndexOf(",")
+                if (count == 2) {
+                    var before = error.substring(0,pos);
+                } else if (count > 2) {
+                    var before = error.substring(0,pos+1);
+                }
+                var after = " and" + error.substring(pos+1);
+                error = before + after + " couldn't be rescued :(";
                 alert(error);
             } else {
-                alert("Moving on...")
-                document.getElementById("next").href = "sike.html"
+                alert("Now find how to escape?")
+                document.getElementById("next").href = "timeline6.html"
             }
 
         }

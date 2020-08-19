@@ -10,21 +10,14 @@
         rect {fill:rgb(255,0,255);stroke-width:3;stroke:rgb(255,255,255);opacity:1.0}
 
         .img {
-            background: url("hbd.jpg") no-repeat fixed 50%;
+            background: url("jail.jpg") no-repeat fixed 50%;
             background-size: cover;
-            /* color: #e4cfa0 */
         }
 
         .content {
             min-height: 100vh;
         }
 
-        .bears {
-            width: 15vw;
-            position: absolute;
-        }
-
-        /* Caption text */
         .text {
             color: #f2f2f2;
             font-size: 15px;
@@ -40,13 +33,25 @@
 <body>
     <div class="img">
         <div class="content"></div>
+        <form id="form" onsubmit="return false;">
+            <input style="position:absolute; top:85%; left:40%; width:20%;" type="text" id="answer"/>
+            <input style="position:absolute; top:90%; left:45%; width:10%;" type="submit" onclick="check();" />
+        </form>
+        <div class="text"><a id="next" style="text-decoration:none; color: #f2f2f2; font-size: 15px;">PARTY</a></div>
     </div>
-    <div class="text">
-        <p style="color: #ff8c1a">Credits:<br>
-            Art: Hrishika Basava, Jenine Pesayco, Jasmine Lee<br>
-            Puzzles: Patricia Tran, Crystal Pan, Hrishika Basava, Jenny Wen, 6 guinea pigs<br>
-            Website: Jenny Wen
-        </p>
-    </div>
+
+    <script>
+        function check() {
+            var answer = document.getElementById("answer").value;
+            if (answer != "answer") {
+                alert("nope.");
+            } else {
+                alert("You got it!")
+                document.getElementById("next").href = "party.html"
+            }
+
+        }
+    </script>
+
 </body>
 </html>
