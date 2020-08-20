@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Escape Room: Care Bears Edition</title>
     <style>
         * {box-sizing: border-box}
         body {font-family: Verdana, sans-serif; margin:0; height:100%}
-        .mySlides {display: none}
         img {object-fit:cover;}
         rect {fill:rgb(255,0,255);stroke-width:3;stroke:rgb(255,255,255);opacity:1.0}
 
@@ -105,7 +105,7 @@
                 error += "Heartsong Bear";
                 count++;
             }
-            if (hopefulheart != "40" || hopefulheart != "forty") {
+            if (hopefulheart != "40" && hopefulheart != "forty") {
                 if (error != "") { error += ", "; }
                 error += "Hopeful Heart Bear";
                 count++;
@@ -119,12 +119,11 @@
             if (error != "") {
                 var pos = error.lastIndexOf(",")
                 if (count == 2) {
-                    var before = error.substring(0,pos);
+                    error = error.substring(0,pos) + " and" + error.substring(pos+1);
                 } else if (count > 2) {
-                    var before = error.substring(0,pos+1);
+                    error = error.substring(0,pos+1) + " and" + error.substring(pos+1);
                 }
-                var after = " and" + error.substring(pos+1);
-                error = before + after + " couldn't be rescued :(";
+                error += " couldn't be rescued :(";
                 alert(error);
             } else {
                 alert("Now find how to escape?")

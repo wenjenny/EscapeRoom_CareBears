@@ -2,30 +2,18 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Timeline 2</title>
     <style>
         * {box-sizing: border-box}
-        body {font-family: Verdana, sans-serif; margin:0; height:100%}
-        .mySlides {display: none}
-        img {object-fit:cover;}
-        rect {fill:rgb(255,0,255);stroke-width:3;stroke:rgb(255,255,255);opacity:1.0}
+        body {font-family: Verdana, sans-serif; margin:0; height:100%; background-color: white;}
 
         .img {
-            background: url("jail.jpg") no-repeat fixed 50%;
-            background-size: cover;
+            background: url("puzzles/timeline2.jpg") no-repeat fixed 50%;
+            background-size: contain;
         }
 
         .content {
             min-height: 100vh;
-        }
-
-        .text {
-            color: #f2f2f2;
-            font-size: 15px;
-            padding: 8px 12px;
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
-            text-align: center;
         }
 
     </style>
@@ -33,25 +21,6 @@
 <body>
     <div class="img">
         <div class="content"></div>
-        <form id="form" onsubmit="return false;">
-            <input style="position:absolute; top:85%; left:40%; width:20%;" type="text" id="answer"/>
-            <input style="position:absolute; top:90%; left:45%; width:10%;" type="submit" onclick="check();" />
-        </form>
-        <div class="text"><a id="next" style="text-decoration:none; color: #f2f2f2; font-size: 15px;">PARTY</a></div>
     </div>
-
-    <script>
-        function check() {
-            var answer = document.getElementById("answer").value;
-            if (answer != "answer") {
-                alert("nope.");
-            } else {
-                alert("You got it!")
-                document.getElementById("next").href = "party.html"
-            }
-
-        }
-    </script>
-
 </body>
 </html>
