@@ -279,7 +279,7 @@
                 </a>
             </div>
             <!-- password for jail, located under connie derp pic -->
-            <div style="position: absolute; top: 39%; left: 42%">
+            <!-- <div style="position: absolute; top: 39%; left: 42%">
                 <a onclick="puzzle9()">
                     <svg width="8vw" height="22vh"><rect width="100%" height="100%"/></svg>
                     <div id="myModal9" class="modal">
@@ -288,7 +288,7 @@
                         </div>
                     </div>
                 </a>
-            </div>
+            </div> -->
         </div>
 
         <div class="mySlides fade img4">
@@ -328,7 +328,8 @@
             </div>
             <!-- door to the next page -->
             <div style="position: absolute; top: 10%; right: 34%">
-                <a onclick="puzzle9_door()" style="cursor:default;" id="door">
+                <a href="unlock.html" style="cursor:default;">
+                <!-- <a onclick="puzzle9_door()" style="cursor:default;" id="door"> -->
                     <svg width="20vw" height="70vh"><rect width="100%" height="100%"/></svg>
                 </a>
             </div>
@@ -404,7 +405,7 @@
                     modal8_2.style.display = "block";
                     unlocked_suitcase = true;
                 } else if (ans !== null){
-                    alert("nope.");
+                    alert("That's not it, chief.");
                 }
             }
         }
@@ -414,14 +415,14 @@
         function puzzle8_4() { modal8_4.style.display = "block"; }
         function puzzle8_5() { modal8_5.style.display = "block"; }
         function puzzle9() { modal9.style.display = "block"; }
-        function puzzle9_door() {
-            var pwd = prompt("derp")
-            if (pwd == "@iTea") {
-                document.getElementById("door").href = "unlock.html"
-            } else if (pwd != null) {
-                alert("Sorry, the door is still locked.")
-            }
-        }
+        // function puzzle9_door() {
+        //     var pwd = prompt("derp")
+        //     if (pwd == "@iTea") {
+        //         document.getElementById("door").href = "unlock.html"
+        //     } else if (pwd != null) {
+        //         alert("Sorry, the door is still locked.")
+        //     }
+        // }
 
         var modals = [modal1, modal2, modal2_2, modal3, modal3_2, modal4, modal5, modal5_1,
             modal5_2, modal5_3, modal6, modal7, modal8, modal8_2, modal8_4, modal8_5, modal9]
