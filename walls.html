@@ -8,8 +8,7 @@
         * {box-sizing: border-box}
         body {font-family: Verdana, sans-serif; margin:0; height:100%}
         .mySlides {display: none}
-        img {object-fit:cover;}
-        rect {fill:rgb(255,0,255);stroke-width:3;stroke:rgb(255,255,255);opacity:0.5}
+        rect {fill:rgb(255,0,255);stroke-width:3;stroke:rgb(255,255,255);opacity:0.0}
 
         .slideshow-container {
             max-height: 100%;
@@ -66,17 +65,17 @@
         }
 
         .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            padding-top: 100px; /* Location of the box */
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
             left: 0;
             top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
         }
 
         .modal-content {
@@ -417,10 +416,10 @@
         function puzzle9() { modal9.style.display = "block"; }
         function puzzle9_door() {
             var pwd = prompt("derp")
-            if (pwd == "@iTea" || pwd == "iTea") {
+            if (pwd == "@iTea") {
                 document.getElementById("door").href = "unlock.html"
             } else if (pwd != null) {
-                alert("wrong.")
+                alert("Sorry, the door is still locked.")
             }
         }
 

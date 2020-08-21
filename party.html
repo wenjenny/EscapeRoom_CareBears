@@ -2,11 +2,12 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Congratulations!</title>
+    <title>Party!</title>
+    <link rel="shortcut icon" href="favicon.ico">
     <style>
         * {box-sizing: border-box}
         body {font-family: Verdana, sans-serif; margin:0; height:100%}
-        img {object-fit:cover;}
+        rect {fill:rgb(255,0,255);stroke-width:3;stroke:rgb(255,255,255);opacity:0.0}
 
         .img {
             background: url("hbd.jpg") no-repeat fixed 50%;
@@ -38,6 +39,11 @@
 <body>
     <div class="img">
         <div class="content"></div>
+        <div style="position: absolute; top: 45%; left: 39%">
+            <a onclick="haha()">
+                <svg width="20vw" height="28vh"><rect width="100%" height="100%"/></svg>
+            </a>
+        </div>
     </div>
     <div class="text">
         <div class="credits">
@@ -47,5 +53,17 @@
                 Website - Jenny Wen
         </div>
     </div>
+
+    <script>
+        var through = false;
+        function haha() {
+            if (!through) {
+                alert("You've been poisoned! You have an hour to find the antidote and escape!!")
+                alert("jk haha xd")
+                alert("You've successfully rescued the Care Bears and escaped unscathed. Great work!")
+            }
+            through = true;
+        }
+    </script>
 </body>
 </html>

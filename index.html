@@ -7,7 +7,6 @@
     <style>
         * {box-sizing: border-box}
         body {font-family: Verdana, sans-serif; margin:0; height:100%}
-        img {object-fit:cover;}
         rect {fill:rgb(255,0,255);stroke-width:3;stroke:rgb(255,255,255);opacity:0.0}
         li { padding: 5px 0px; }
 
@@ -20,7 +19,6 @@
             min-height: 100vh;
         }
 
-        /* The Modal (background) */
         .modal {
             display: none; /* Hidden by default */
             position: fixed; /* Stay in place */
@@ -35,7 +33,6 @@
             background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
         }
 
-        /* Modal Content */
         .modal-content {
             background-color: #fefefe;
             margin: auto;
@@ -131,10 +128,10 @@
             if (pass == "821") {
                 document.getElementsByClassName("img")[0].style.backgroundImage = 'url("tv_room/tv_on.jpg")';
                 // modal.style.display = "none";
-                alert("Something happened...")
                 document.getElementById("door").href = "walls.html";
+                alert("Something happened!")
             } else if (pass !== null && pass.trim() != "") {
-                alert("incorrect, try again")
+                alert("There's just static on the TV...")
             }
         }
 

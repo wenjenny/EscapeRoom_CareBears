@@ -18,7 +18,7 @@
         }
 
         .text {
-            color: #f2f2f2;
+            color: #fafafa;
             font-size: 15px;
             padding: 8px 12px;
             position: absolute;
@@ -36,15 +36,15 @@
             <input style="position:absolute; top:90%; left:40%; width:20%;" type="text" id="answer"/>
             <input style="position:absolute; top:95%; left:45%; width:10%;" type="submit" onclick="check();" />
         </form>
-        <div class="text"><a id="next" style="text-decoration:none; color: #f2f2f2; font-size: 15px;">PARTY</a></div>
+        <div class="text"><a id="next" style="text-decoration:none; color: #fafafa; font-size: 15px;">LET'S GO!</a></div>
     </div>
     <script>
         function check() {
             var ans = document.getElementById("answer").value;
-            if (ans !== "1381286") {
+            if (ans !== "47") {
                 alert("That's not it. Try again!")
             } else {
-                alert("PARTY")
+                alert("LET'S GO!")
                 document.getElementById("next").href = "party.html"
             }
         }
