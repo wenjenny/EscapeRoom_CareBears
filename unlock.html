@@ -74,7 +74,7 @@
 
             var error = "";
             var count = 0;
-            if (bestfriend != "buffet") {
+            if (bestfriend.toLowerCase() != "buffet") {
                 error += "Best Friend Bear";
                 count++;
             }
@@ -83,7 +83,7 @@
                 error += "Cozy Heart Penguin";
                 count++;
             }
-            if (funshine != "blood") {
+            if (funshine != "BLOOD") {
                 if (error != "") { error += ", "; }
                 error += "Funshine Bear";
                 count++;
@@ -98,7 +98,7 @@
                 error += "Grumpy Bear";
                 count++;
             }
-            if (heartsong != "bop bop bop") {
+            if (heartsong.toLowerCase() != "bop bop bop") {
                 if (error != "") { error += ", "; }
                 error += "Heartsong Bear";
                 count++;
