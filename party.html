@@ -19,12 +19,41 @@
             min-height: 100vh;
         }
 
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .modal-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            height: 70vh;
+        }
+
         .text {
             color: black;
             font-size: 15px;
             padding: 8px 12px;
             position: absolute;
-            bottom: 0px;
+            bottom: 5px;
             width: 100%;
             text-align: center;
         }
@@ -39,31 +68,305 @@
 <body>
     <div class="img">
         <div class="content"></div>
-        <div style="position: absolute; top: 36%; left: 41%">
+        <!-- cake -->
+        <div style="position: absolute; top: 37%; left: 41%">
             <a onclick="haha()">
-                <svg width="14vw" height="21vh"><rect width="100%" height="100%"/></svg>
+                <svg width="14vw" height="20vh"><rect width="100%" height="100%"/></svg>
+            </a>
+        </div>
+        <!-- candles -->
+        <div style="position: absolute; top: 31%; left: 45%">
+            <a onclick="toggle()">
+                <svg width="5vw" height="6vh"><rect width="100%" height="100%"/></svg>
+            </a>
+        </div>
+        <!-- blue gift -->
+        <div style="position: absolute; top: 41%; left: 33%">
+            <a onclick="puzzle1()">
+                <svg width="8vw" height="12vh"><rect width="100%" height="100%"/></svg>
+                <div id="myModal1" class="modal">
+                    <div class="modal-content">
+                        <p>You open the gift and see a container filled with black liquid and objects inside. <br>
+                            You swish around the box and determine that the objects are spherical. <br>
+                            One spills out of the container and you step on it. It is squishy. <br>
+                            On the container it says, "Think about how much do you need."</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- purple gift -->
+        <div style="position: absolute; top: 53%; left: 33%">
+            <a onclick="puzzle2()">
+                <svg width="8vw" height="6vh"><rect width="100%" height="100%"/></svg>
+                <div id="myModal2" class="modal">
+                    <div class="modal-content">
+                        <p>You open the gift and see a container filled with white liquid. <br>
+                            You see that there’s a sticker that says 100% MOO. <br>
+                            On the container it says, "Think about how much do you need."</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- pink gift -->
+        <div style="position: absolute; top: 44%; left: 55%">
+            <a onclick="puzzle3()">
+                <svg width="7vw" height="14vh"><rect width="100%" height="100%"/></svg>
+                <div id="myModal3" class="modal">
+                    <div class="modal-content">
+                        <p>You open the gift and see a container filled with yellow-ish liquid. <br>
+                            The smell that comes out of this container smells fragrant and reminds you of dim sum. <br>
+                            On the container it says, "Think about how much do you need."</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- left red balloon -->
+        <div style="position: absolute; top: 34%; left: 18%">
+            <a onclick="puzzle4()">
+                <svg width="5vw" height="14vh"><rect width="100%" height="100%"/></svg>
+                <div id="myModal4" class="modal">
+                    <div class="modal-content">
+                        <img src="party_puzzles/cup.png" class="modal-image" style="height:70%"></img>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- left green balloon -->
+        <div style="position: absolute; top: 29%; left: 23%">
+            <a onclick="puzzle5()">
+                <svg width="5vw" height="14vh"><rect width="100%" height="100%"/></svg>
+                <div id="myModal5" class="modal">
+                    <div class="modal-content">
+                        <img src="party_puzzles/lid.jpg" class="modal-image"></img>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- left orange balloon -->
+        <div style="position: absolute; top: 34%; left: 28%">
+            <a onclick="puzzle6()">
+                <svg width="5vw" height="14vh"><rect width="100%" height="100%"/></svg>
+                <div id="myModal6" class="modal">
+                    <div class="modal-content">
+                        <img src="party_puzzles/pigeoncipher.png" class="modal-image"></img>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- right green balloon -->
+        <div style="position: absolute; top: 29%; left: 70%">
+            <a onclick="puzzle7()">
+                <svg width="5vw" height="14vh"><rect width="100%" height="100%"/></svg>
+                <div id="myModal7" class="modal">
+                    <div class="modal-content">
+                        <img src="party_puzzles/ice.png" class="modal-image"></img>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- right orange balloon -->
+        <div style="position: absolute; top: 34%; left: 75%">
+            <a onclick="puzzle8()">
+                <svg width="5vw" height="14vh"><rect width="100%" height="100%"/></svg>
+                <div id="myModal8" class="modal">
+                    <div class="modal-content">
+                        <img src="party_puzzles/straw.png" class="modal-image" style="height:70%"></img>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- tablecloth -->
+        <div style="position: absolute; top: 59%; left: 29%">
+            <a onclick="puzzle9()">
+                <svg width="35vw" height="24vh"><rect width="100%" height="100%"/></svg>
+                <div id="myModal9" class="modal">
+                    <div class="modal-content">
+                        <p>ANTIDOTE MACHINE</p>
+                        <p>Enter the ingredients and materials in the correct order.<br>
+                            The order can be found when you come back from the darkness...</p>
+                        <form id="form" onsubmit="return false;">
+                            <label for="cup">1. </label>
+                            <input style="position:absolute; width:10%;" type="text" id="cup"/><br><br>
+                            <label for="boba">2. </label>
+                            <input style="position:absolute; width:10%;" type="text" id="boba"/><br><br>
+                            <label for="boba_amt">How much? </label>
+                            <input style="position:absolute; width:10%;" type="text" id="boba_amt"/><br><br>
+                            <label for="ice">3. </label>
+                            <input style="position:absolute; width:10%;" type="text" id="ice"/><br><br>
+                            <label for="tea">4. </label>
+                            <input style="position:absolute; width:10%;" type="text" id="tea"/><br><br>
+                            <label for="tea_amt">How much? </label>
+                            <input style="position:absolute; width:10%;" type="text" id="tea_amt"/><br><br>
+                            <label for="milk">5. </label>
+                            <input style="position:absolute; width:10%;" type="text" id="milk"/><br><br>
+                            <label for="milk_amt">How much? </label>
+                            <input style="position:absolute; width:10%;" type="text" id="milk_amt"/><br><br>
+                            <label for="lid">6. </label>
+                            <input style="position:absolute; width:10%;" type="text" id="lid"/><br><br>
+                            <label for="straw">7. </label>
+                            <input style="position:absolute; width:10%;" type="text" id="straw"/><br><br>
+                            <input style="position:absolute; width:20%;" type="submit" onclick="check();" />
+                        </form>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- eat me sign - lighter -->
+        <div style="position: absolute; top: 30%; left: 56%">
+            <a onclick="lighter()">
+                <svg width="8vw" height="14vh"><rect width="100%" height="100%"/></svg>
             </a>
         </div>
     </div>
-    <div class="text">
+    <!-- <div class="text">
         <div class="credits">
                 Credits:
                 Art - Hrishika Basava, Jenine Pesayco, Jasmine Lee;
                 Puzzles - Patricia Tran, Hrishika Basava, Crystal Pan, 6 guinea pigs;
                 Website - Jenny Wen
         </div>
-    </div>
+    </div> -->
 
     <script>
-        var through = false;
-        function haha() {
-            if (!through) {
-                alert("You've been poisoned! You have an hour to find the antidote and escape!!")
-                alert("jk haha xd")
-                alert("You've successfully rescued the Care Bears and escaped unscathed. Great work!")
+
+        function check() {
+            var cup = document.getElementById("cup").value;
+            var boba = document.getElementById("boba").value;
+            var boba_amt = document.getElementById("boba_amt").value;
+            var ice = document.getElementById("ice").value;
+            var tea = document.getElementById("tea").value;
+            var tea_amt = document.getElementById("tea_amt").value;
+            var milk = document.getElementById("milk").value;
+            var milk_amt = document.getElementById("milk_amt").value;
+            var lid = document.getElementById("lid").value;
+            var straw = document.getElementById("straw").value;
+
+            var error = "";
+            if (cup.toLowerCase() != "cup") { error += "first ingredient, "; }
+            if (boba.toLowerCase() != "boba") { error += "second ingredient, "; }
+            if (boba_amt != "3") { error += "second ingredient amount, "; }
+            if (ice.toLowerCase() != "ice") { error += "third ingredient, "; }
+            if (tea.toLowerCase() != "tea") { error += "fourth ingredient, "; }
+            if (tea_amt != "6") { error += "fourth ingredient amount, "; }
+            if (milk.toLowerCase() != "milk") { error += "fifth ingredient, "; }
+            if (milk_amt != "1.5") { error += "fifth ingredient amount, "; }
+            if (lid.toLowerCase() != "lid") { error += "sixth ingredient, "; }
+            if (straw.toLowerCase() != "straw") { error += "seventh ingredient, "; }
+
+            if (error != "") {
+                error = error.slice(0, -2) + " incorrect."
+                alert(error)
+            } else {
+                alert("You've successfully saved the Care Bears and yourself! No cap. Congratulations!")
             }
-            through = true;
+
         }
+        var cake_clicked = false;
+        function haha() {
+            if (!cake_clicked) {
+                alert("You've been poisoned! You have half an hour to find the antidote and escape!!")
+                alert("jk haha xd")
+                alert("...or am I? >:)")
+                // alert("You've successfully rescued the Care Bears and escaped unscathed. Great work!")
+            }
+            cake_clicked = true;
+        }
+
+
+        var found_lighter = false;
+        function lighter(){
+            if (cake_clicked && !found_lighter) {
+                found_lighter = true;
+                alert("owo what's this?! You found a lighter!");
+            }
+        }
+
+        var dark_before = false;
+        var light = true;
+        function toggle() {
+            if (found_lighter) {
+                if (light) {
+                    document.getElementsByClassName("img")[0].style.backgroundImage = 'url("hbd_dark.jpg")';
+                    dark_before = true;
+                } else {
+                    document.getElementsByClassName("img")[0].style.backgroundImage = 'url("hbd.jpg")';
+                }
+                light = !light;
+            }
+        }
+
+        var modal1 = document.getElementById("myModal1");
+        var modal2 = document.getElementById("myModal2");
+        var modal3 = document.getElementById("myModal3");
+        var modal4 = document.getElementById("myModal4");
+        var modal5 = document.getElementById("myModal5");
+        var modal6 = document.getElementById("myModal6");
+        var modal7 = document.getElementById("myModal7");
+        var modal8 = document.getElementById("myModal8");
+        var modal9 = document.getElementById("myModal9");
+
+        function puzzle1() {
+            if (light && dark_before) {
+                modal1.style.display = "block";
+            }
+        }
+        function puzzle2() {
+            if (light && dark_before) {
+                modal2.style.display = "block";
+            }
+        }
+        function puzzle3() {
+            if (light && dark_before) {
+                modal3.style.display = "block";
+            }
+        }
+        function puzzle4() {
+            if (light && dark_before) {
+                modal4.style.display = "block";
+            }
+        }
+        function puzzle5() {
+            if (light && dark_before) {
+                modal5.style.display = "block";
+            }
+        }
+        function puzzle6() {
+            if (light && dark_before) {
+                modal6.style.display = "block";
+            }
+        }
+        function puzzle7() {
+            if (light && dark_before) {
+                modal7.style.display = "block";
+            }
+        }
+        function puzzle8() {
+            if (light && dark_before) {
+                modal8.style.display = "block";
+            }
+        }
+        function puzzle9() {
+            if (light && dark_before) {
+                modal9.style.display = "block";
+            }
+        }
+
+        var modals = [modal1, modal2, modal3, modal4, modal5, modal6, modal7, modal8, modal9]
+        window.onclick = function(event) {
+            if (modals.includes(event.target)) {
+                modal1.style.display = "none";
+                modal2.style.display = "none";
+                modal3.style.display = "none";
+                modal4.style.display = "none";
+                modal5.style.display = "none";
+                modal6.style.display = "none";
+                modal7.style.display = "none";
+                modal8.style.display = "none";
+                modal9.style.display = "none";
+            }
+        }
+
+
     </script>
 </body>
 </html>
